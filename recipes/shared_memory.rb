@@ -2,10 +2,10 @@
 
 osx_sysctl "increase shared memory allocation size" do
   name "kern.sysv.shmall"
-  value "65536"
+  value node['sprout']['shared_memory']['shmall'].to_s
 end
 
 osx_sysctl "increase shared memory max" do
   name "kern.sysv.shmmax"
-  value "16777216"
+  value node['sprout']['shared_memory']['shmmax'].to_s
 end
